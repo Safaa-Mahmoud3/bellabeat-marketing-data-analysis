@@ -31,9 +31,9 @@ This project analyzes FitBit fitness tracker data to answer:
 
 | Stage | Tools |
 |---|---|
-| Data Cleaning & Processing | Python (Pandas, NumPy) |
-| Analysis | Pandas, Statistical correlation (Pearson's r) |
-| Visualization | Matplotlib, Seaborn |
+| Data Cleaning & Processing | Python (Pandas) |
+| Analysis | Pandas, Statistical correlation |
+| Visualization | Matplotlib |
 | Environment | Kaggle Notebooks |
 
 ---
