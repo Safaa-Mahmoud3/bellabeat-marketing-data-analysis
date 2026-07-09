@@ -1,49 +1,100 @@
-# Bellabeat Smart Device Data Analysis
+# Bellabeat Smart Device Usage Analysis
+### Unlocking Growth Opportunities for Women's Wellness Marketing
 
-
-**Prepared by:** Safaa Mahmoud
-
----
-
-## 1. Business Scenario
-Bellabeat is a high-tech manufacturer of health-focused products for women. The goal of this project is to analyze smart device fitness data from non-Bellabeat users (FitBit) to identify consumer usage trends and provide high-level, data-driven marketing strategies for Bellabeat's executive team to unlock new growth opportunities.
+![Status](https://img.shields.io/badge/status-completed-brightgreen)
+![Python](https://img.shields.io/badge/tools-Python%20%7C%20Pandas%20%7C%20Matplotlib-blue)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
 ---
 
-## 2. Data Source Description
-To understand consumer habits, this analysis utilizes public-domain smart device datasets. A quick overview of the dataset structure is summarized below:
+## 📌 Business Task
 
-| Attribute | Value |
-| :--- | :--- |
-| **Data Source** | Kaggle FitBit Fitness Tracker Data (via Mobius) |
-| **Sample Size** | 33 Unique Users  |
-| **Tracking Period** | March 2016 – May 2016 |
-| **Licensing** | CC0: Public Domain |
-| **Core Files Used** | `dailyActivity_merged.csv` |
+Bellabeat is a high-tech manufacturer of health-focused products for women. The company wants to understand how consumers use **non-Bellabeat smart devices** in order to identify growth opportunities and inform its own marketing strategy.
 
-### 2.1 Dataset Context & Content
-* **Comprehensive Tracking:** The dataset contains personal fitness tracking data from eligible Fitbit users who consented to share minute-level output. This includes physical activity, heart rate, and sleep monitoring.
+This project analyzes FitBit fitness tracker data to answer:
+1. What are the usage trends in smart device data?
+2. How can these trends apply to Bellabeat customers?
+3. How can these trends help shape Bellabeat's marketing strategy?
 
 ---
 
-## 3. Technologies Used
-* **Language:** Python
-* **Libraries:** Pandas, NumPy, Matplotlib
-* **Environment:** Jupyter Notebook / Kaggle Notebook
+## 📂 Data Source
+
+- **Dataset:** [FitBit Fitness Tracker Data](https://www.kaggle.com/datasets/arashnic/fitbit) (Kaggle, public domain via Mobius)
+- **Scope:** Daily activity records from 33 Fitbit users
+- **Time period:** April 12, 2016 – May 12, 2016 (31 days)
+- **License note:** Data has limitations — small sample size, self-selected users, and data from 2016, which are acknowledged as constraints on generalizability.
 
 ---
 
-## 4. Crucial Insight: The Friday Paradox (Adherence vs. Activity)
-A fascinating contrast was discovered when comparing **User Adherence (Logging Rate)** and **Actual Activity (Average Steps)**:
+## 🛠️ Tools & Tech Stack
 
-* **Friday Behavior:** Friday recorded the **highest logging completion rate (95.5%)**, meaning users almost never take off their smart devices on this day. However, it showed one of the **lowest average step counts (7,448 steps)**. 
-* **The Takeaway:** This indicates that on Fridays, users are highly committed to wearing their trackers, but their lifestyle becomes significantly more **sedentary** (low movement/rest days).
-* **Tuesday/Saturday Behavior:** Conversely, days like Tuesday and Saturday show a slightly lower adherence frequency but experience huge spikes in physical movement, beating the 8,000 steps mark.
+| Stage | Tools |
+|---|---|
+| Data Cleaning & Processing | Python (Pandas, NumPy) |
+| Analysis | Pandas, Statistical correlation (Pearson's r) |
+| Visualization | Matplotlib, Seaborn |
+| Environment | Kaggle Notebooks |
 
 ---
-## 5. Marketing & Product Recommendations
 
-* **Contextual Friday Push Notifications (The Friday Paradox):** Since data shows women wear their Bellabeat devices faithfully on Fridays (95.5% adherence) but move the least, the Bellabeat App should trigger tailored, friendly notifications on Friday afternoons. Instead of an aggressive "Go run" alert, send a wellness-focused reminder like: *"We notice you're enjoying a relaxing Friday! How about a quick 10-minute evening walk to hit your step goal while keeping your streak alive?"*
-* **Incentivize the 10k Goal:** The Bellabeat app can send encouraging, smart push notifications around mid-day if a user is far from reaching the 10,000 steps threshold, reminding them of the personal health and calorie-burning benefits.
-* **Target Inactive Days (Sunday Challenges):** Since data shows activity drops significantly on Sundays, marketing campaigns and app notifications can introduce "Sunday Fun-Walk" challenges or community badges to motivate users on typically lazy days.
-* **Sedentary Alerts for Office Workers:** Because users spend a massive portion of their day being sedentary, Bellabeat can heavily market its **Leaf** or **Time** trackers as fashionable wellness assistants. The app can feature a custom setting that gently vibrates to remind women to stand up and stretch after 1 hour of continuous sitting.
+## 🔍 Methodology
+
+1. **Data Cleaning**
+   - Checked for null values and duplicates (none found)
+   - Validated date ranges and confirmed 31 unique logging days per user
+   - Checked for invalid/negative values across numeric columns
+
+2. **Feature Engineering**
+   - Extracted `day_of_week` from `activity_date` for weekly pattern analysis
+   - Created an `activity_level` segmentation (Sedentary / Active / Very Active) based on average daily steps per user
+
+3. **Exploratory Data Analysis**
+   - Descriptive statistics (`df.describe()`) across all activity metrics
+   - Correlation analysis between steps and calories burned
+   - Weekly trend analysis for steps, logging consistency, and active vs. sedentary minutes
+
+---
+
+## 📊 Key Insights
+
+- **The 10,000-Steps Gap:** Average daily steps across users is ~7,637 — falling short of the widely recommended 10,000-step benchmark.
+- **Steps Drive Calories:** A strong positive correlation exists between steps taken and calories burned (**Pearson's r = 0.59**), confirming that movement is a key driver of energy expenditure.
+- **Weekly Activity Pattern:** Users are most active on **Saturdays (8,153 steps)** and **Tuesdays (8,125 steps)**, and least active on **Sundays (6,933 steps)**.
+- **Logging Consistency:** Logging completion rate peaks on **Fridays (95.5%)** and dips on **Thursdays (89.1%)**, suggesting engagement fatigue mid-week.
+- **A Sedentary Lifestyle:** Users spend an average of **~991 minutes/day (81.3%)** sedentary, compared to just 1.7% in very active minutes and 1.1% in fairly active minutes — highlighting a major behavioral gap.
+
+---
+
+## 💡 Business Recommendations
+
+1. **Incentivize the 10K Goal (Smart Notifications):** Send encouraging push notifications mid-day when a user is falling behind on their step goal, paired with calorie-burn framing to boost motivation.
+
+2. **Target Inactive Days:** Since activity consistently dips on Sundays, design targeted marketing campaigns and in-app challenges specifically to re-engage users on their least active day.
+
+3. **Sedentary Alerts for Office Workers:** Given that over 80% of tracked time is sedentary, position Bellabeat's **Leaf** and **Time** trackers as stylish wellness companions that gently vibrate to remind women to stand and move after prolonged periods of inactivity.
+
+---
+
+## 📁 Repository Structure
+
+```
+bellabeat-marketing-data-analysis/
+│
+├── datasets/          # Raw FitBit dataset files
+├── notebooks/         # Full analysis notebook (Kaggle/Jupyter)
+└── README.md          # Project overview (this file)
+```
+
+---
+
+## 🔗 Links
+
+- **Full Notebook (Kaggle):** [bellabeat_analysis](https://www.kaggle.com/code/safaamahmoudghanem/bellabeat-analysis)
+
+---
+
+## 👩‍💻 Author
+
+**Safaa Mahmoud**
+Data Analytics Trainee | Aspiring Data Engineer
