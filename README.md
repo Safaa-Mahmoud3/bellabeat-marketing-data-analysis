@@ -16,7 +16,7 @@ To understand consumer habits, this analysis utilizes public-domain smart device
 | Attribute | Value |
 | :--- | :--- |
 | **Data Source** | Kaggle FitBit Fitness Tracker Data (via Mobius) |
-| **Sample Size** | 33 Unique Users (30 consented initially) |
+| **Sample Size** | 33 Unique Users  |
 | **Tracking Period** | March 2016 – May 2016 |
 | **Licensing** | CC0: Public Domain |
 | **Core Files Used** | `dailyActivity_merged.csv` |
