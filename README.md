@@ -1,7 +1,6 @@
 # Bellabeat Smart Device Usage Analysis
 ### Unlocking Growth Opportunities for Women's Wellness Marketing
 
-![Status](https://img.shields.io/badge/status-completed-brightgreen)
 ![Python](https://img.shields.io/badge/tools-Python%20%7C%20Pandas%20%7C%20Matplotlib-blue)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
@@ -90,4 +89,3 @@ bellabeat-marketing-data-analysis/
 ## 👩‍💻 Author
 
 **Safaa Mahmoud**
-Data Analytics Trainee | Aspiring Data Engineer
