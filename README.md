@@ -85,13 +85,6 @@ bellabeat-marketing-data-analysis/
 ├── notebooks/         # Full analysis notebook (Kaggle/Jupyter)
 └── README.md          # Project overview (this file)
 ```
-
----
-
-## 🔗 Links
-
-- **Full Notebook (Kaggle):** [bellabeat_analysis](https://www.kaggle.com/code/safaamahmoudghanem/bellabeat-analysis)
-
 ---
 
 ## 👩‍💻 Author
