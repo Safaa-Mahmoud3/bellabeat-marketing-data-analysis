@@ -1,5 +1,5 @@
 # Bellabeat Smart Device Data Analysis
-### Google Data Analytics Capstone Project
+
 
 **Prepared by:** Safaa Mahmoud
 
